@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script>
+        
+        let name = 'School123';
+        let change = function(){
+            console.log('we can do it');
+        }    
+        
+        const school = {
+            name,
+            change,
+            improve(){
+                console.log('improve yourself')
+            }
+        }
+
+        let fn = (a,b) => {
+            return a + b;
+        }
+
+        let result = fn(1,2)
+        console.log(result)
+
+        let ad = document.getElementById('ad');
+
+        ad.addEventListener("click",function(){
+            setTimeout(() => {
+                this.style.background = 'pink';
+            },2000)
+        });
+        
+        const arr = [1,6,9,10,100,25];
+        const result2 = arr.filter(item => item % 2 === 0);
+        console.log(result2)
+
+        
+
+    </script>
+</body>
+</html>
