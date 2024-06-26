@@ -116,7 +116,7 @@ export default function App() {
                 iconCreateFunction={createClusterCustomIcon}
             >
 
-            {geoJsonData && geoJsonData.features.map((feature, id) => {
+            {filteredData && filteredData.features.map((feature, id) => {
                     const [lng, lat] = feature.geometry.coordinates;
                     const { "Company Name": companyName, Headquarters, Time } = feature.properties;
                     return (
@@ -124,7 +124,7 @@ export default function App() {
                             <Popup>
                                 <strong>{companyName}</strong>
                                 <br />
-                                Headquarters: {Headquarters}
+                                Location: {Headquarters}
                                 <br />
                                 Time: {Time}
                             </Popup>
