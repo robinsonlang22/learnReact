@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import App from './01-base/yangshiComponent.js';
+import App from './03-hooks/03-useEffect';
 import './styles.css';
 
 // define const root
