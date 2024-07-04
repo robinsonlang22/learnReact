@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import App from './01-base/05-shijian';
+import App from './00-tutor/ShoppingList';
 
 // define const root
 const root = createRoot(document.getElementById('root'));
