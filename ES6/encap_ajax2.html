@@ -15,13 +15,13 @@
 
         pro
         .then((res)=>{
-            console.log("bonus: ",res);
+            console.log("bonus1: ",res);
         })
-        .catch(()=>{
-            console.log("nothing");
+        .then((res)=>{
+            console.log("bonus2: ",res);
         })
-        .finally(()=>{
-            console.log("finally");
+        .catch((err)=>{
+            console.log("nothing",err);
         })
     </script>
 </body>
