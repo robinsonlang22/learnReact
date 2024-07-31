@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 
-class Child extends Component{
-    render(){
-        return <div>Child</div>
-    }
+function Child() {
+    return <div>Child</div>
 }
 
 //类组件

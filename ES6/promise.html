@@ -7,7 +7,17 @@
 </head>
 <body>
     <script>
+        let pro = new Promise(function(resolve,reject){
+            setTimeout(() => {
+                resolve(1000)
+            }, 1000);
+        })
         
+        pro.then((res)=>{
+            console.log("bonus: ",res);
+        }).catch(()=>{
+            console.log("nothing");
+        })
     </script>
 </body>
 </html>
