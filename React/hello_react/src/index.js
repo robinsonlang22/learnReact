@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import App from './01-base/09-render';
+import App from './heima_react/Day2/App';
 
 // define const root
 const root = createRoot(document.getElementById('root'));
