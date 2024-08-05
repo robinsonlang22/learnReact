@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="decrement">-</button>
+    <span id="count">0</span>
+    <button id="increment">+</button>
+
+    <!-- 引入React和ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- 引入Redux和React-Redux -->
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+    <script src="https://unpkg.com/react-redux@8.0.2/dist/react-redux.min.js"></script>
+
+    <script>
+        // define reducer 
+        function reducer(state = {count: 0}, action){
+            if (action.type === 'INCREMENT') {
+                return {count: state.count + 1}
+            }
+            if (action.type === 'DECREMENT') {
+                return {count: state.count - 1}
+            }
+            return state
+        }
+
+        //generate store
+        const store = Redux.createStore(reducer)
+
+        //subscribe
+        store.subscribe(()=>{
+            console.log("state is changed", store.getState());
+            document.getElementById('count').innerText = store.getState().count
+        })
+
+        //dispatch
+        const inBtn = document.getElementById("increment")
+        inBtn.addEventListener('click',()=>{
+            store.dispatch({
+                type:"INCREMENT"
+            })
+        })
+
+        const dBtn = document.getElementById("decrement")
+        dBtn.addEventListener('click',()=>{
+            store.dispatch({
+                type:"DECREMENT"
+            })
+        })
+        
+        
+    </script>
+</body>
+</html>
