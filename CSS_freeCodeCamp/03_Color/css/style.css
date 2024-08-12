@@ -1,0 +1,15 @@
+body {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: #ACC8E5;
+    color: #1A1A1A;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.5);
+    color: #f00;
+    color: #808080;
+    color: #1A1A1A;
+}
+
