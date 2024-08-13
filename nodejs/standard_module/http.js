@@ -1,14 +1,25 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+  // req接受客户端请求, res响应客户端请求  
   console.log(req.url);
-  res.write('Hello, World111!\n');
-  res.end('Hello, World!\n');
+  // 设置响应头
+  res.writeHead(200, {'Content-Type':'text/html;charset=utf-8'});
+  res.write(renderHTML(req.url));
+  res.end('request success!\n');
 });
 
-server.listen(3001, () => {
-  console.log('Server running at http://localhost:3001/');
+server.listen(3000, () => {
+  console.log('Server started');
 });
 
+function renderHTML(url) {
+  return `
+  <html>
+    <body>
+      <b>hello world</b>
+      <div>hello everyone</div>
+    </body>
+  </html>
+  `
+}
