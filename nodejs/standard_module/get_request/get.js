@@ -25,7 +25,6 @@ function httpGet(response){
        })   
 
        res.on('end',()=>{
-        console.log(data);
         response.end(data);
 
        })
