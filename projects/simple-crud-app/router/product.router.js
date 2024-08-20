@@ -1,12 +1,15 @@
 const express = require("express")
-const Product = require("./model/product_model")
 const router = express.Router()
+const { getProducts, getProductsById, updateProducts, deleteProducts, createProducts } = require("../controller/product.controller")
 
-router.get('/', async (req, res) => {
-    try {
-        const products = await Product.find({})
-        res.status(200).json(products)
-    } catch (error) {
-        res.status(500).json({ message: error.message })
-    }
-})
+router.get('/', getProducts)
+
+router.get('/:id', getProductsById)
+
+router.post('/', createProducts)
+
+router.put('/:id', updateProducts)
+
+router.delete('/:id', deleteProducts)
+
+module.exports = router
