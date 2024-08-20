@@ -6,6 +6,9 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
+//routes
+app.use("/api/product", productRoute)
+
 app.get('/', (req, res) => {
     res.send('hello api');
 })
