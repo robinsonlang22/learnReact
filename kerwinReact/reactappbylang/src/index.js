@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './03-hooks/15-useReducer3';
+import App from './04-router/App';
 
 // define const root
 const root = createRoot(document.getElementById('root'));
