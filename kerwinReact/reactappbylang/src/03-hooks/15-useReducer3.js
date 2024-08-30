@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         default:
             return state
     }
-}
+};
 
 export default function App() {
     const [state, dispatch] = useReducer(reducer, initialState)
