@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import NowPlaying from './films/nowplaying'
 import ComingSoon from './films/comingsoon'
 
@@ -8,8 +8,12 @@ export default function Films() {
     <div>
       Filmcomponent
       {/* 路由嵌套 */}
-      <Route path="/films/nowplaying" component={NowPlaying}></Route>
-      <Route path="/films/comingsoon" component={ComingSoon}></Route>
+      <Switch>
+        {/* 匹配到一个就break */}
+        <Route path="/films/nowplaying" component={NowPlaying}></Route>
+        <Route path="/films/comingsoon" component={ComingSoon}></Route>
+        <Redirect from="/films" to="/films/nowplaying" exact></Redirect>
+      </Switch>
     </div>
   )
 }

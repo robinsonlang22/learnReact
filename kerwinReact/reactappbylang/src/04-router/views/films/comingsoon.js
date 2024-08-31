@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function comingsoon() {
+export default function Comingsoon() {
   return (
     <div>
       comingsoon
