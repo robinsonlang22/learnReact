@@ -21,10 +21,10 @@ export default function Details(props) {
             <ul>
                 {
                     films.filter(item => item.filmId === displayId).map(item => (
-                        <li key={item.filmId}>
-                            <div>{item.name}</div>
+                        <div key={item.filmId}>
+                            <strong>{item.name}</strong>
                             <div style={{ width: '600px' }}>{item.synopsis}</div>
-                        </li>
+                        </div>
                     ))
                 }
             </ul>
