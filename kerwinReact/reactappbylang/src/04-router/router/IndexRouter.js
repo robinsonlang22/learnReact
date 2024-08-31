@@ -11,6 +11,7 @@ export default function MRouter() {
             <HashRouter>
                 <Switch>
                     <Route path="/films" component={Films}></Route>
+                    {/* <Route path="/films/nowplaying" component={NowPlaying}></Route> */}
                     <Route path="/cinemas" component={Cinemas}></Route>
                     <Route path="/center" component={Center}></Route>
                     <Redirect from="/" to="/films" exact></Redirect>
