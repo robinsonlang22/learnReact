@@ -6,10 +6,10 @@ import ComingSoon from './films/comingsoon'
 export default function Films() {
   return (
     <div>
-      <div>
+      {/* <div>
         <span>正在热映</span>
         <span>即将上映</span>
-      </div>
+      </div> */}
       {/* 路由嵌套 */}
       <Switch>
         {/* 匹配到一个就break */}
