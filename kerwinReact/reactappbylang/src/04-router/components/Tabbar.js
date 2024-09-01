@@ -1,10 +1,11 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import '../css/tabbar.css'
+import style from './tabbar.module.css'
+
 
 export default function Tabbar() {
   return (
-    <div>
+    <div className={style.tabbar}>
       <ul>
         <li>
             <NavLink to="/films" activeClassName="active"> 
