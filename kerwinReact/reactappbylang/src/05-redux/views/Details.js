@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import store from '../redux/store'
 
 export default function Details(props) {
     const [films, setFilms] = useState([])
@@ -17,9 +18,13 @@ export default function Details(props) {
     }, [])
 
     useEffect(() => {
-        console.log("create")
+        store.dispatch({
+            type: 'hide-tabbar',
+        })
         return () => {
-            console.log("destroy")
+            store.dispatch({
+                type: 'show-tabbar',
+            })
         }
     }, [])
 
