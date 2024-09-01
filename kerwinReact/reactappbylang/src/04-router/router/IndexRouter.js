@@ -17,8 +17,8 @@ export default function MRouter(props) {
                     <Route path="/cinemas" component={Cinemas}></Route>
                     {/* <Route path="/center" component={Center}></Route> */}
                     {/* 路由拦截 */}
-                    <Route path="/center" render={() =>{
-                        return localStorage.getItem('token') ? <Center /> : <Redirect to="/login" />
+                    <Route path="/center" render={(props) =>{
+                        return localStorage.getItem('token') ? <Center {...props} /> : <Redirect to="/login" />
                     }}></Route>
                     <Route path="/details/:filmId" component={Details}></Route>
                     <Route path="/login" component={Login}></Route>
