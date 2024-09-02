@@ -1,9 +1,13 @@
-// 你好世界
-//console.log("Hello World");
+"use strict";
 
-function greet(person: string, date: Date) {
-    console.log(`Hello ${person}, today is ${date}!`);
+function greet(person: String, date: Date) {
+    console.log(`Hello ${person}, today is ${date.toDateString()}!`);
   }
   
 greet("Brendan", new Date());
+
+let msg = "Hello World";
+
+let age : number = 20;
+
 
