@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">getdata</button>
+    <script>
+        btn.onclick = function(){
+            let xhr = new XMLHttpRequest()
+            xhr.open("GET","")
+            xhr.send()
+            xhr.onload = function () {
+                if (xhr.status===200) {
+                    console.log(xhr.responseText);
+                    let jsondata = JSON.parse(xhr.responseText)
+                    render(jsondata)
+                }
+            }
+        }
+
+        function render(jsondata){
+            console.log(jsondata.data.list);
+        }
+
+    </script>
+</body>
+</html>

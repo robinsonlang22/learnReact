@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <button id="box">click</button>
+    <button id="btn">click2</button>
+    <script>
+    
+    //this point to Window
+    setTimeout(() => {
+        console.log(1111,this);
+    }, 2000);
+
+    //this point to DOM
+    box.onclick = function(){
+        console.log("11111",this);
+    }
+
+    //this point to Object
+    const obj1 = {
+        name:"obj1",
+        getName:function(a,b,c){
+            console.log("getName1",this.name,a,b,c);
+        }
+    }
+
+    const obj2 = {
+        name:"obj2",
+        getName:function(){
+            console.log("getName2",this.name);
+        }
+    }
+
+    obj1.getName()
+    obj2.getName()
+
+    //call
+    obj1.getName.call(obj2,1,2,3)
+    //apply
+    obj1.getName.apply(obj2,[1,2,3])
+    //bind, return a new as original function with pointed item
+    let func1 = obj1.getName.bind(obj2)
+    func1()
+
+    //异步执行
+    btn.onclick = handle.bind(window)
+
+    function handle(){
+        console.log(11111,this);
+    }
+
+    </script>
+</body>
+</html>
