@@ -2,6 +2,8 @@
 // url: why -> res: why
 // url: res + "aaa" -> res: whyaaa
 
+const co = require("co");
+
 function requestData(url) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -45,6 +47,7 @@ function* getData() {
 //     });
 // })
 
+// 自己实现co库
 function execGenerator(genFn) {
     const generator = genFn();
     function exec(res) {
@@ -59,16 +62,17 @@ function execGenerator(genFn) {
     exec(); 
 }
 
-execGenerator(getData);
+// 第三方库 co
+co(getData);
 
-// 第四种方案 async/await
-async function getData2() {
+// 第四种方案 ES8 async/await
+async function getDataAsync() {
     let res1 = await requestData("why");
     let res2 = await requestData(res1 + "aaa");
     let res3 = await requestData(res2 + "bbb");
     console.log(res3);  
 }
 
-getData2();
+getDataAsync();
 
 
