@@ -4,7 +4,8 @@
 
 // 事件循环： js thread => 其他线程(耗时操作) => 回调函数到事件队列 => js thread 执行函数
 // macro task: setTimeout, ajax, DOM, UI rendering
-// micro task: queueMicrotask, Promise, async/await
+// micro task: queueMicrotask,
+// 默认仍然直接执行，除非碰到resolve, await 相当于返回 resolve(undefined): Promise, async/await
 
 // main script
 console.log("script start");
