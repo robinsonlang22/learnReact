@@ -1,0 +1,9 @@
+import React from 'react'
+
+export default function NoPermission() {
+  return (
+    <div>
+      <h1>403 NoPermission</h1>
+    </div>
+  )
+}

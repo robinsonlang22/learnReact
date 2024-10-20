@@ -23,7 +23,7 @@ function createSelbstStore(reducer) {
         list.push(callback)
     }
 
-    function dispatch() {
+    function dispatch(action) {
         state = reducer(state, action)
         list.forEach(callback => {
             callback && callback()
