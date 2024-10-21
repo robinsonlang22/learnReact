@@ -1,9 +1,20 @@
 import React from 'react'
+import { Layout, theme } from 'antd'
+
+const { Header } = Layout
 
 export default function TopHeader() {
+
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+
   return (
-    <div>
-      <h1>TopHeader</h1>
-    </div>
+    <Header
+      style={{
+        padding: 0,
+        background: colorBgContainer,
+      }}
+    />
   )
 }
